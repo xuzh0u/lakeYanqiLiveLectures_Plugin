@@ -1,0 +1,186 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<!-- saved from url=(0081)http://*.16.74.*/live/Live.action -->
+<HTML>
+
+<HEAD>
+    <META content="IE=5.0000" http-equiv="X-UA-Compatible">
+
+    <SCRIPT type="text/javascript">
+        /*var isSupportFront = ;
+        var isSupportBackstage = ;*/
+
+
+    </SCRIPT>
+
+    <META http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <TITLE>lakeYanqiLiveLectures</TITLE>
+    <META http-equiv="Cache-control" content="public">
+    <META http-equiv="Cache-control" content="private">
+    <META http-equiv="Cache-control" content="no-cache">
+    <META http-equiv="Cache-control" content="no-store">
+    <META http-equiv="pragma" content="no-cache">
+    <SCRIPT src="lakeYanqiLiveLectures_files/SilverlightN.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="lakeYanqiLiveLectures_files/ReachPlayerN.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="lakeYanqiLiveLectures_files/jquery.min.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="lakeYanqiLiveLectures_files/message.zh_CN.js" type="text/javascript"></SCRIPT>
+
+    <SCRIPT src="lakeYanqiLiveLectures_files/jquery.reach.js" type="text/javascript"></SCRIPT>
+
+    <STYLE type="text/css">
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #silverlightControlHost {
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+    </STYLE>
+
+    <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
+</HEAD>
+
+<BODY>
+    <DIV> <select id="channelid" onchange="window.location.reload();">
+            <option  value="1|0"> J1-002</option>
+            <option  value="3|2"> J1-009</option>
+            <option  value="5|4"> J1-101</option>
+            <option  value="7|6"> J1-107</option>
+            <option  value="9|8"> J1-108</option>
+            <option value="11|10">J1-109</option>
+            <option value="13|12">J1-113</option>
+            <option value="15|14">J1-114</option>
+            <option value="17|16">J1-115</option>
+            <option value="19|18">J1-123</option>
+            <option value="21|20">J1-125</option>
+            <option value="23|22">J1-225</option>
+            <option value="25|24">J1-207</option>
+            <option value="27|26">J1-208</option>
+            <option value="29|28">J1-209</option>
+            <option value="31|30">J1-213</option>
+            <option value="33|32">J1-214</option>
+            <option value="35|34">J1-215</option>
+            <option value="37|36">J1-223</option>
+            <option value="39|38">J1-225</option>
+            <option value="41|40">J1-227</option>
+            <option value="43|42">J1-304</option>
+            <option value="45|44">J1-305</option>
+            <option value="47|46">J1-306</option>
+            <option value="49|48">J1-313</option>
+            <option value="51|50">J1-315</option>
+            <option value="53|52">J1-317</option>
+            <option value="55|54">J1-404</option>
+            <option value="57|56">J1-405</option>
+            <option value="59|58">J1-406</option>
+            <option value="61|60">J1-4aa[407?]</option>
+            <option value="62|63">J1-4bb</option>
+            <option value="65|64">J1-4bc</option>
+            <option value="65|66">J1-4bd</option>
+            <option value="69|68">J1-417</option>
+        </select></DIV>
+    <DIV id="form1" style="height: 100%;" runat="server"></DIV>
+    <FOOTER>
+        <SCRIPT type="text/javascript">
+            $(document).ready(function () {
+                // 获取保存在 cookie 中的 channelid 值，如果没有则默认为第一个选项
+                var lastSelected = getCookie('channelid') || $('#channelid option:first-child').val();
+                // 设置 select 的当前选项为上次保存的值
+                $('#channelid').val(lastSelected);
+
+                // 当 select 的选项发生变化时，将其值保存到 cookie 中
+                $('#channelid').change(function () {
+                    var selected = $(this).val();
+                    setCookie('channelid', selected);
+                });
+
+                // 设置 cookie 的函数
+                function setCookie(name, value, days) {
+                    var expires = "";
+                    if (days) {
+                        var date = new Date();
+                        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                        expires = "; expires=" + date.toUTCString();
+                    }
+                    document.cookie = name + "=" + (value || "") + expires + "; path=/";
+                }
+
+                // 获取 cookie 的函数
+                function getCookie(name) {
+                    var nameEQ = name + "=";
+                    var ca = document.cookie.split(';');
+                    for (var i = 0; i < ca.length; i++) {
+                        var c = ca[i];
+                        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+                    }
+                    return null;
+                }
+            });
+
+            $.onLoad(function () {
+                var mChannelId = $("#channelid").val();
+                var maxLiveUser = 1000;
+                var curLiveUser = 9;
+                var html = "<div id=\"silverlightControlHost\">"
+                    + "<object data=\"data:application/x-silverlight-2,\" type=\"application/x-silverlight-2\" width=\"100%\" height=\"100%\" id=\"szReachPlayer\">"
+                    + "<param name=\"source\" value=\"ReachPlayerN.xap\"/>"
+                    + "<param name=\"onLoad\" value=\"playerOnLoad\" />"
+                    + "<param name=\"onError\" value=\"onSilverlightError\" />"
+                    + "<param name=\"enableGPUAcceleration\" value=\"false\"/>"
+                    + "<param name=\"background\" value=\"white\" />"
+                    + "<param name=\"minRuntimeVersion\" value=\"4.0.50524.0\" />"
+                    + "<param name=\"initParams\" value=\"gobackurl=,"
+                    + "language=0,showmirror=0,buffertime1=0,"
+                    + "buffertime2=0,buffertime3=0,liveip=124.16.74.210,"
+                    + "liveport=4520,channelid="
+                    + mChannelId
+                    + "\"/>"
+                    + "<param name=\"autoUpgrade\" value=\"true\" />"
+                    + "<a href=\"http://go.microsoft.com/fwlink/?LinkID=149156&v=4.0.50524.0\" style=\"text-decoration:none\">"
+                    + "<img src=\"http://go.microsoft.com/fwlink/?LinkId=161376\" alt=\"Get Microsoft Silverlight\" style=\"border-style:none\"/>"
+                    + "</a>"
+                    + "</object>"
+                    + "<iframe id=\"_sl_historyFrame\" style=\"visibility:hidden;height:0px;width:0px;border:0px\"></iframe>"
+                    + "</div>";
+
+
+                if (maxLiveUser <= curLiveUser) {
+                    alert(Message['keyListen_maxLiveUser']);
+                    window.close();
+                } else {
+                    $("#form1").html(html);
+                }
+
+                setInterval("heart()", 5000);
+
+
+            });
+            function heart() {
+                $.gAjax({
+                    url: "/live/Live.action",
+                    data: "cmd=22002&recip=172.16.10.48&channel=3&ln=0",
+                    success: function (result) {
+                        if (result == "nolive") {
+                            //alert(Message['live_closed']);
+                            window.close();
+                        }
+                    }
+                });
+            }
+        </SCRIPT>
+    </FOOTER>
+</BODY>
+
+</HTML>
