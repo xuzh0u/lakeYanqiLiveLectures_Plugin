@@ -16,12 +16,14 @@
 
 ## 项目结构
 
-- lakeYanqiLiveLecture_files/: 项目依赖的 js 文件
-- channelid_ref.csv: 教室对应 id 的简表
-- lakeYanqiLiveLecture.htm: 主要使用的本地 htm 文件
-- ReachPlayer.xap: 项目依赖的文件
-- README.md: 项目说明文件
-- Silverlight_x64.exe: 可用的 SilverLight 安装文件
+```
+|- lakeYanqiLiveLecture_files/  # 项目依赖的 js 文件
+|- channelid_ref.csv            # 教室对应 id 的简表
+|- lakeYanqiLiveLecture.htm     # 主要使用的本地 htm 文件
+|- ReachPlayer.xap              # 项目依赖的文件
+|- README.md                    # 项目说明文件
+|- Silverlight_x64.exe          # 可用的 SilverLight 安装文件
+```
 
 ## TODOs
 
